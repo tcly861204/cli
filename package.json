@@ -1,0 +1,25 @@
+{
+  "name": "travis",
+  "version": "1.0.0",
+  "description": "travis测试",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node build/dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcly861204/travis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcly861204/travis/issues"
+  },
+  "homepage": "https://github.com/tcly861204/travis#readme",
+  "devDependencies": {
+    "ora": "^3.0.0",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
