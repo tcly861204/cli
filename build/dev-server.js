@@ -1,16 +1,21 @@
 const webpack = require('webpack')
-const webpackDevConfig = require('./webpack.config.dev')
 const ora = require('ora')
+const rm = require('rimraf')
+const path = require('path')
+
+const webpackDevConfig = require('./webpack.config.dev')
 const spinner = ora('building for development...')
 spinner.start()
-webpack(webpackDevConfig, function(err, stats){
-  spinner.stop()
+rm(path.join(__dirname, '../dist'), err=>{
   if (err) throw err
-  process.stdout.write(stats.toString({
-    colors: true,
-    modules: false,
-    children: false,
-    chunks: false,
-    chunkModules: false
-  }) + '\n\n' )
+  webpack(webpackDevConfig, function(err, stats){
+    spinner.stop()
+    process.stdout.write(stats.toString({
+      colors: true,
+      modules: false,
+      children: false,
+      chunks: false,
+      chunkModules: false
+    }) + '\n\n' )
+  })
 })
