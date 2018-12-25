@@ -12,3 +12,4 @@ install:
 
 script:
   - npm run dev
+  - npm run build
