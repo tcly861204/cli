@@ -3,37 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 function resolve(dir){
-  return path.resolve(__dirname, '..', dir)
+  return path.join(__dirname,'..', dir)
 }
 module.exports = {
   mode: 'development',
   entry: {
-    main: resolve('src/main.js')
+    main: path.join(__dirname, '../src/main.js')
   },
   output: {
     filename: 'js/[name].[hash:8].js',
-    path: resolve('dist'),
-    publicPath: '/',
-    chunkFilename:'js/[name].[chunkhash:8].js'
-  },
-  devServer: {
-    contentBase: resolve('public/'),
-    historyApiFallback: true,
-    host: '0.0.0.0',
-    open: true,
-    inline: true,
-    port: 8000,
-    compress: true, //服务器返回给浏览器的时候是否启动gzip压缩
-  },
-  module: {
-    unknownContextCritical : false,
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      }
-    ]
+    path: resolve('/dist'),
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -48,6 +28,15 @@ module.exports = {
         }
       }
     }
+  },
+  devServer: {
+    contentBase: resolve('/dist'),
+    historyApiFallback: true,
+    host: 'localhost',
+    open: true,
+    inline: true,
+    port: 8000,
+    compress: true, //服务器返回给浏览器的时候是否启动gzip压缩
   },
   plugins: [
     new cleanWebpackPlugin('dist', {
