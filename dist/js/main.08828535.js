@@ -86,14 +86,26 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/images/20180804221240920.png":
+/*!******************************************!*\
+  !*** ./src/images/20180804221240920.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/20180804221240920.c27379b.png\";\n\n//# sourceURL=webpack:///./src/images/20180804221240920.png?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const a = 10;\r\nconsole.log(a);\r\nconsole.log(124)\n\n//# sourceURL=webpack:///./src/main.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _images_20180804221240920_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/20180804221240920.png */ \"./src/images/20180804221240920.png\");\n/* harmony import */ var _images_20180804221240920_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_images_20180804221240920_png__WEBPACK_IMPORTED_MODULE_0__);\nvar a = 10;\n\nconsole.log(a);\nconsole.log(124);\nconsole.log(\"development\");\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 

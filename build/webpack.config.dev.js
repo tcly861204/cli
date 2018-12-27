@@ -15,6 +15,32 @@ module.exports = {
     path: resolve('/dist'),
     publicPath: '/'
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: /node_modules/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      }
+    ]
+  },
   optimization: {
     splitChunks: {
       chunks: "all",
@@ -39,6 +65,9 @@ module.exports = {
     compress: true, //服务器返回给浏览器的时候是否启动gzip压缩
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': 'development'
+    }),
     new cleanWebpackPlugin('dist', {
       root: resolve('/'),
       verbose: false,
@@ -58,3 +87,5 @@ module.exports = {
     })
   ]
 }
+
+
