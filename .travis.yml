@@ -17,15 +17,3 @@ install:
 script:
   - npm run dev
   - npm run build
-  
-after_success:
-  - cd ./dist
-  - git init
-  - git add .
-  - git commit -m "发布新系统"
-  - git remote add origin https://github.com/tcly861204/fabu.git
-  - git pull origin master --allow-unrelated-histories
-  - git add .
-  - git commit -m "发布系统"
-  - git push orign master
-  
