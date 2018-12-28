@@ -17,13 +17,13 @@ install:
 script:
   - npm run dev
   - npm run build
-  
-after_success:
-  - rm -rf README.md
-  - rm -rf .gitignore
-  - git remote add fabu https://github.com/tcly861204/fabu.git
-  - git remote -v
-  - git pull fabu master --allow-unrelated-histories
-  - git add .
-  - git commit -m "merge"
-  - git push
+ 
+# after_success:
+#  - rm -rf README.md
+#  - rm -rf .gitignore
+#  - git remote add fabu https://github.com/tcly861204/fabu.git
+#  - git remote -v
+#  - git pull fabu master --allow-unrelated-histories
+#  - git add .
+#  - git commit -m "merge"
+#  - git push fabu master
